@@ -5,6 +5,8 @@ Proyek ini membangun dan membandingkan baseline rekomendasi pada dataset Amazon 
 ## Isi utama
 
 - `01_eda_training.ipynb` ? eksplorasi data training dan katalog item.
+- `Task_1_Experimental_Protocol.ipynb` ? protokol eksperimen dan baseline recommender.
+- `Task_2_Candidate_Set_dan_Metrik.ipynb` ? audit candidate set serta implementasi Recall@10 dan NDCG@10.
 - `02_baseline_recommenders.ipynb` ? Popularity, collaborative Item-CF, TF-IDF Content-Based Filtering (CBF), dan sanity check rekomendasi.
 - `03_hybrid_fusion.ipynb` ? Weighted Score Fusion dan Reciprocal Rank Fusion (RRF) dari ranking Item-CF dan TF-IDF CBF.
 - `src/` ? fungsi untuk memuat data, membangun recommender, mengevaluasi ranking, dan menggabungkan ranking.
@@ -43,7 +45,7 @@ pip install -r requirements.txt
 python -m jupyter lab
 ```
 
-Buka `02_baseline_recommenders.ipynb`, lalu pilih **Run All**. Setelah itu buka dan jalankan `03_hybrid_fusion.ipynb` untuk membandingkan strategi hybrid. Notebook mengharapkan folder `src/` dan kedua folder dataset berada di bawah direktori proyek.
+Buka dan jalankan `Task_1_Experimental_Protocol.ipynb`, kemudian `Task_2_Candidate_Set_dan_Metrik.ipynb` untuk mengaudit candidate set dan metrik evaluasi. Setelah itu jalankan `02_baseline_recommenders.ipynb` dan `03_hybrid_fusion.ipynb` untuk baseline serta perbandingan strategi hybrid. Notebook mengharapkan folder `src/` dan kedua folder dataset berada di bawah direktori proyek.
 
 Jika PowerShell memblokir aktivasi environment, jalankan perintah instalasi dengan interpreter environment secara langsung:
 

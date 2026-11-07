@@ -1,0 +1,2 @@
+model,users_evaluated,recall@10,ndcg@10
+Popularity,11659,0.013498503732927795,0.009222040875545052
