@@ -1,0 +1,21 @@
+{
+  "task": "CP3 - Task 2 Candidate Set & Metrics",
+  "dataset": "Amazon Reviews 2023 - Musical Instruments",
+  "train_interactions": 427957,
+  "validation_warm_interactions": 27537,
+  "candidate_universe_size": 22753,
+  "evaluable_users": 11659,
+  "rating_relevant_threshold": 4,
+  "metric_k": 10,
+  "positive_validation_training_seen_excluded": 0,
+  "evaluable_users_with_zero_target_after_filter": 0,
+  "user_specific_seen_exclusion": true,
+  "uses_test_data": false,
+  "popularity_smoke_test": {
+    "model": "Popularity",
+    "users_evaluated": 11659,
+    "recall@10": 0.013498503732927795,
+    "ndcg@10": 0.009222040875545052
+  },
+  "sanity_checks": "PASS"
+}
