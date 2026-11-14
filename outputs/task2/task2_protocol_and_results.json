@@ -1,0 +1,70 @@
+{
+  "task": "Task 2 - Baseline Evaluation",
+  "protocol_source": "Task_1_Evaluation_Setup.ipynb",
+  "model_source": "Task_1_Experimental_Protocol(1).ipynb + src.recommenders",
+  "split": "official train + warm validation",
+  "uses_final_test": false,
+  "train_interactions": 427957,
+  "warm_validation_rows": 27537,
+  "evaluable_users": 11659,
+  "candidate_items": 22753,
+  "users_without_target": 0,
+  "seen_positive_targets_excluded": 0,
+  "relevant_rows": 24202,
+  "positive_threshold": 4.0,
+  "k": 10,
+  "aggregation": "macro average over all official evaluable users",
+  "candidate_ids_sha256": "0924b53421a02aea01f70c78c78f67be57fc71700b27eb89f292ef22a3fbc5a0",
+  "eval_user_ids_sha256": "344c66aa42516b412b32b65a38a6f1d28f5e6df647174b629de7513beb8245aa",
+  "item_cf_top_k": 100,
+  "tfidf_top_k": 100,
+  "tfidf_parameters": {
+    "analyzer": "word",
+    "binary": false,
+    "decode_error": "strict",
+    "dtype": "<class 'numpy.float32'>",
+    "encoding": "utf-8",
+    "input": "content",
+    "lowercase": true,
+    "max_df": 0.8,
+    "max_features": 100000,
+    "min_df": 2,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "norm": "l2",
+    "preprocessor": null,
+    "smooth_idf": true,
+    "stop_words": "english",
+    "strip_accents": null,
+    "sublinear_tf": true,
+    "token_pattern": "(?u)\\b\\w\\w+\\b",
+    "tokenizer": null,
+    "use_idf": true,
+    "vocabulary": null
+  },
+  "chunk_size": 32,
+  "recommenders_source_sha256": "1be15c4ce255208b6180736d6fa6beb0d5e2c4d3ed6826faa62a116691fc4f6d",
+  "audit": "PASS",
+  "results": [
+    {
+      "model": "Popularity",
+      "users_evaluated": 11659,
+      "recall@10": 0.013498503732927795,
+      "ndcg@10": 0.009222040875545052
+    },
+    {
+      "model": "Item-CF",
+      "users_evaluated": 11659,
+      "recall@10": 0.005885283512122503,
+      "ndcg@10": 0.0033509674983504436
+    },
+    {
+      "model": "TF-IDF CBF",
+      "users_evaluated": 11659,
+      "recall@10": 0.012233976372245565,
+      "ndcg@10": 0.007492072285689686
+    }
+  ]
+}
