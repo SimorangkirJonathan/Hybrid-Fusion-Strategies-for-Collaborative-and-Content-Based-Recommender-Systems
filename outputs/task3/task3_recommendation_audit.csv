@@ -1,0 +1,6 @@
+Model,Status audit,Jumlah user
+Popularity,PASS,11659
+Item-CF,PASS,11659
+TF-IDF CBF,PASS,11659
+Weighted Score,PASS,11659
+RRF,PASS,11659

@@ -1,0 +1,33 @@
+{
+  "task": "CP3 - Task 3 Experiment Evaluation",
+  "dataset": "Amazon Reviews 2023 - Musical Instruments",
+  "evaluation_split": "validation_warm",
+  "uses_final_test": false,
+  "train_interactions": 427957,
+  "validation_warm_interactions": 27537,
+  "candidate_universe_size": 22753,
+  "evaluable_users": 11659,
+  "positive_rating_threshold": 4,
+  "metric_k": 10,
+  "component_top_k": 100,
+  "recommendation_top_n": 200,
+  "fusion_output_top_n": 10,
+  "cache_key": "13454c5090f84bab",
+  "selection_rule": "Highest NDCG@10, Recall@10 as tie-breaker",
+  "best_weighted_score": {
+    "item_cf_weight": 0.3,
+    "tfidf_cbf_weight": 0.7,
+    "recall@10": 0.012820472895357574,
+    "ndcg@10": 0.007930263917610704
+  },
+  "best_rrf": {
+    "rrf_k": 100,
+    "recall@10": 0.014198471384448571,
+    "ndcg@10": 0.009086490370941119
+  },
+  "popularity_baseline": {
+    "recall@10": 0.01349850373292779,
+    "ndcg@10": 0.009222040875545047
+  },
+  "recommendation_audit": "PASS"
+}
