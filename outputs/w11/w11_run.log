@@ -1,0 +1,9 @@
+selesai dalam 71.6s
+         label        config_id  ndcg@10  recall@10  ndcg@20  ndcg@50
+    Popularity    E1-popularity 0.009222   0.013499 0.011476 0.016235
+       Item-CF   E2-itemcf-k100 0.003323   0.005800 0.004366 0.006495
+    TF-IDF CBF     E3-tfidf-cbf 0.007491   0.012148 0.009546 0.013057
+Weighted Score E4-weighted-a030 0.007930   0.012820 0.009973 0.013464
+           RRF      E5-rrf-k100 0.009086   0.014198 0.011097 0.014563
+pemenang: E1-popularity
+figure: 10

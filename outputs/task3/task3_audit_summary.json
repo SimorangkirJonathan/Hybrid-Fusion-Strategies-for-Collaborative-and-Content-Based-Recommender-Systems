@@ -1,0 +1,12 @@
+{
+  "task": "Task 3 - Evaluable Users and Leakage Rules",
+  "train_interactions": 427957,
+  "evaluable_users": 11659,
+  "validation_warm_interactions": 27537,
+  "target_rows_after_seen_exclusion": 24202,
+  "users_without_target": 0,
+  "test_files_available": [],
+  "mf_status": "NOT_AVAILABLE - belum ada implementasi MF pada repository saat ini",
+  "fit_call_count_audited": 9,
+  "leakage_checks": "PASS"
+}

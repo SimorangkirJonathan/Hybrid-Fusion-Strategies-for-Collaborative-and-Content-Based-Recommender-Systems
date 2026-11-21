@@ -1,0 +1,9 @@
+kombinasi_model_dengan_hit,n_users
+tidak ada hit,10984
+Popularity,333
+TF-IDF CBF,207
+Item-CF,73
+Item-CF + TF-IDF CBF,33
+Item-CF + Popularity,21
+Popularity + TF-IDF CBF,7
+Item-CF + Popularity + TF-IDF CBF,1

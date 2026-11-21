@@ -1,0 +1,4 @@
+model_a,model_b,a_lebih_baik,b_lebih_baik,seri
+Item-CF,Popularity,106,340,11213
+Item-CF,TF-IDF CBF,95,216,11348
+Popularity,TF-IDF CBF,354,241,11064
