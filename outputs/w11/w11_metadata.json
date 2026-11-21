@@ -1,0 +1,212 @@
+{
+  "task": "W11 - Experiment track on validation",
+  "timestamp_utc": "2026-11-21T15:51:11.467508+00:00",
+  "seed": 42,
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "git": {
+    "commit": "e7ac087530547fb18f44451cd8ee4bc5e5319bf2",
+    "branch": "jonathan",
+    "dirty": true
+  },
+  "protocol": {
+    "split": "official temporal; warm-start evaluable users",
+    "positive_threshold": 4.0,
+    "top_n_ranking": 200,
+    "k_list": [
+      10,
+      20,
+      50
+    ],
+    "primary_metric": "ndcg@10",
+    "train_interactions": 427957,
+    "validation_warm_rows": 27537,
+    "evaluable_users": 11659,
+    "candidate_universe": 22753,
+    "relevant_targets": 24202,
+    "uses_final_test": false
+  },
+  "search_space": {
+    "alphas": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "rrf_ks": [
+      10,
+      20,
+      40,
+      60,
+      80,
+      100
+    ]
+  },
+  "cache": {
+    "cache_key": "13454c5090f84bab",
+    "cache_files": {
+      "Popularity": {
+        "path": "d:/Semester 7/Sisrek/Praktikum/proyek/outputs/task3/cache/popularity_recommendations_13454c5090f84bab.joblib",
+        "sha256": "c63e6878c421cc62d531dc09281ada46af646a913d55d9563b798180dc1b4faf"
+      },
+      "Item-CF": {
+        "path": "d:/Semester 7/Sisrek/Praktikum/proyek/outputs/task3/cache/item_cf_recommendations_13454c5090f84bab.joblib",
+        "sha256": "919d820829bf0786a7954e6cfa0de654b294c9e93bac8b84d2647aa51047b2f4"
+      },
+      "TF-IDF CBF": {
+        "path": "d:/Semester 7/Sisrek/Praktikum/proyek/outputs/task3/cache/tfidf_cbf_recommendations_13454c5090f84bab.joblib",
+        "sha256": "268281cdcc40fd3d0ad5616033df76a175bda147671061e8f464bebfc58326d2"
+      }
+    }
+  },
+  "data_files": {
+    "interactions_train.csv": "27e2d435d98344769bea0f89f949418a6f269c51dcfefa9b59bbbe5910826313",
+    "interactions_validation_warm.csv": "3a5023d3703007617874a20aabe1a6495bf0c2cb405e90dda8026fed3ddc1104",
+    "candidate_items_warm.csv": "eeddfd1a11d8ecc1e76506f8c0f6c19c533ee4d4cbd80bb6629dd85993864153"
+  },
+  "audit": [
+    {
+      "pemeriksaan": "protokol ranking - Popularity",
+      "status": "PASS",
+      "bukti": "11659 user tersedia, 11659 dievaluasi; max 200 item; 0 duplikat; 0 di luar kandidat; 0 seen-item"
+    },
+    {
+      "pemeriksaan": "protokol ranking - Item-CF",
+      "status": "PASS",
+      "bukti": "11659 user tersedia, 11659 dievaluasi; max 200 item; 0 duplikat; 0 di luar kandidat; 0 seen-item"
+    },
+    {
+      "pemeriksaan": "protokol ranking - TF-IDF CBF",
+      "status": "PASS",
+      "bukti": "11659 user tersedia, 11659 dievaluasi; max 200 item; 0 duplikat; 0 di luar kandidat; 0 seen-item"
+    },
+    {
+      "pemeriksaan": "target relevan tidak training-seen",
+      "status": "PASS",
+      "bukti": "0 overlap"
+    },
+    {
+      "pemeriksaan": "user universe sama untuk semua model",
+      "status": "PASS",
+      "bukti": "11659 user per model"
+    }
+  ],
+  "n_configs": 20,
+  "winners": {
+    "best_overall": {
+      "config_id": "E1-popularity",
+      "family": "baseline",
+      "params": "{\"model\": \"Popularity\"}",
+      "duration_sec": 0.312,
+      "recall@10": 0.013498503732927795,
+      "precision@10": 0.0031820910884295395,
+      "ndcg@10": 0.009222040875545052,
+      "mrr@10": 0.012987718459885882,
+      "map@10": 0.005489877475039152,
+      "recall@20": 0.021493055413309155,
+      "precision@20": 0.0024101552448752036,
+      "ndcg@20": 0.011476351532778168,
+      "mrr@20": 0.01389085316548242,
+      "map@20": 0.005982755889244528,
+      "recall@50": 0.04200598377720279,
+      "precision@50": 0.00183206106870229,
+      "ndcg@50": 0.016235024370712167,
+      "mrr@50": 0.015004434950287839,
+      "map@50": 0.006607187323415185,
+      "users_evaluated": 11659,
+      "users_with_hit@10": 362,
+      "hit_rate_pct@10": 3.104897504074106,
+      "unique_items@10": 18
+    },
+    "best_by_family": {
+      "baseline": {
+        "config_id": "E1-popularity",
+        "family": "baseline",
+        "params": "{\"model\": \"Popularity\"}",
+        "duration_sec": 0.312,
+        "recall@10": 0.013498503732927795,
+        "precision@10": 0.0031820910884295395,
+        "ndcg@10": 0.009222040875545052,
+        "mrr@10": 0.012987718459885882,
+        "map@10": 0.005489877475039152,
+        "recall@20": 0.021493055413309155,
+        "precision@20": 0.0024101552448752036,
+        "ndcg@20": 0.011476351532778168,
+        "mrr@20": 0.01389085316548242,
+        "map@20": 0.005982755889244528,
+        "recall@50": 0.04200598377720279,
+        "precision@50": 0.00183206106870229,
+        "ndcg@50": 0.016235024370712167,
+        "mrr@50": 0.015004434950287839,
+        "map@50": 0.006607187323415185,
+        "users_evaluated": 11659,
+        "users_with_hit@10": 362,
+        "hit_rate_pct@10": 3.104897504074106,
+        "unique_items@10": 18
+      },
+      "rrf": {
+        "config_id": "E5-rrf-k100",
+        "family": "rrf",
+        "params": "{\"rrf_k\": 100}",
+        "duration_sec": 0.489,
+        "recall@10": 0.014198471384448573,
+        "precision@10": 0.0028733167510078053,
+        "ndcg@10": 0.009086490370941116,
+        "mrr@10": 0.010687363260482738,
+        "map@10": 0.005872904364688762,
+        "recall@20": 0.020976824715249993,
+        "precision@20": 0.0021571318294879493,
+        "ndcg@20": 0.011096545414529075,
+        "mrr@20": 0.011522821045142259,
+        "map@20": 0.006357107731279879,
+        "recall@50": 0.03576430986966955,
+        "precision@50": 0.0014701089287245904,
+        "ndcg@50": 0.014562867764097827,
+        "mrr@50": 0.012344190481476915,
+        "map@50": 0.006843059274606585,
+        "users_evaluated": 11659,
+        "users_with_hit@10": 321,
+        "hit_rate_pct@10": 2.7532378420104644,
+        "unique_items@10": 18897
+      },
+      "weighted": {
+        "config_id": "E4-weighted-a030",
+        "family": "weighted",
+        "params": "{\"cbf_weight\": 0.7, \"cf_weight\": 0.3}",
+        "duration_sec": 0.559,
+        "recall@10": 0.012820472895357574,
+        "precision@10": 0.0022814992709494814,
+        "ndcg@10": 0.00793026391761071,
+        "mrr@10": 0.008818107681646578,
+        "map@10": 0.0052224420946009415,
+        "recall@20": 0.01963081591420838,
+        "precision@20": 0.0018526460245304058,
+        "ndcg@20": 0.009972764958710433,
+        "mrr@20": 0.009757374227925022,
+        "map@20": 0.005702886957340419,
+        "recall@50": 0.03467926727719585,
+        "precision@50": 0.0013191525859850759,
+        "ndcg@50": 0.013443309670489222,
+        "mrr@50": 0.010534863475241416,
+        "map@50": 0.006204404345390254,
+        "users_evaluated": 11659,
+        "users_with_hit@10": 255,
+        "hit_rate_pct@10": 2.1871515567372843,
+        "unique_items@10": 17725
+      }
+    }
+  }
+}

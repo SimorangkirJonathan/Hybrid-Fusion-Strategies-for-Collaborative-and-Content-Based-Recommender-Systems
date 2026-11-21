@@ -54,6 +54,20 @@ Jika PowerShell memblokir aktivasi environment, jalankan perintah instalasi deng
 .\.venv\Scripts\python.exe -m jupyter lab
 ```
 
+## W11 - experiment track pada validation
+
+Runner eksperimen penuh ada di `src/w11_experiment.py`. Runner ini memakai protokol CP3 tanpa perubahan (official temporal split, 11.659 evaluable user, candidate universe 22.753 item, relevan rating >= 4, test tidak dipakai) dan menjalankan 20 konfigurasi: 3 baseline, 11 bobot Weighted Score (alpha 0,0-1,0), dan 6 konstanta RRF. Metrik dihitung untuk K = 10, 20, 50 (Recall, Precision, NDCG, MRR, MAP), lalu model terbaik dipilih berdasarkan NDCG@10 dengan tie-breaker Recall@10.
+
+```powershell
+python -m src.w11_experiment                 # eksperimen penuh, 11.659 user
+python -m src.w11_experiment --limit-users 300 --out outputs/w11_smoke   # smoke test
+python -m src.w11_build_report               # PDF + teks analisis RQ
+```
+
+Keluaran di `outputs/w11/`: `w11_all_configs.csv` (log semua konfigurasi), `w11_model_comparison.csv`, `w11_user_segments.csv`, `w11_metadata.json` (seed, commit, hash data/cache, audit), `w11_experiment_summary.md`, `w11_rq_analysis.md`, dan `figures/` (PNG 300 dpi + PDF). Laporan hasil eksperimen ada di `output/pdf/W11_Laporan_Hasil_Eksperimen.pdf`.
+
+Ranking komponen dimuat dari cache Task 3 yang sudah diaudit (`outputs/task3/cache`, cache key tercatat di metadata), sehingga metrik mereproduksi run tersebut; W11 tidak melakukan fitting ulang dan tidak menyentuh test set.
+
 ## Representasi dan parameter awal
 
 - Interaksi positif ditetapkan sebagai rating `>= 4`.
