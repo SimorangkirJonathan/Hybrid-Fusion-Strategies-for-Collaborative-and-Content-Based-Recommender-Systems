@@ -1,0 +1,207 @@
+{
+  "task": "CP3 3.4 - Pemeriksaan dan Analisis Hasil Awal",
+  "dataset": "Amazon Reviews 2023 - Musical Instruments",
+  "sources": [
+    "outputs/task2/baseline_comparison.csv",
+    "outputs/task2/baseline_metrics_per_user.csv",
+    "outputs/task2/baseline_top10.csv",
+    "outputs/task3/task3_model_comparison.csv",
+    "outputs/task3/task3_summary.json",
+    "outputs/task3/task3_weighted_score_results.csv",
+    "outputs/task3/task3_rrf_results.csv"
+  ],
+  "audit": {
+    "users": 11659,
+    "baseline_models": [
+      "Item-CF",
+      "Popularity",
+      "TF-IDF CBF"
+    ],
+    "popularity_recall_sources": [
+      0.013498503732927795,
+      0.01349850373292779,
+      0.013498503732927795
+    ],
+    "protocol_k": 10,
+    "protocol_positive_threshold": 4.0,
+    "uses_test_data": false
+  },
+  "comparison": [
+    {
+      "model": "RRF (k=100)",
+      "sumber_per_user": false,
+      "users": 11659,
+      "recall@10": 0.0141984713844485,
+      "ndcg@10": 0.0090864903709411,
+      "users_with_hit": NaN,
+      "hit_rate_pct": NaN,
+      "mean_targets": NaN,
+      "unique_items_top10": NaN,
+      "unique_items_rank1": NaN,
+      "recall_vs_popularity_pct": 5.1855203018777996
+    },
+    {
+      "model": "Popularity",
+      "sumber_per_user": true,
+      "users": 11659,
+      "recall@10": 0.013498503732927795,
+      "ndcg@10": 0.00922204087554505,
+      "users_with_hit": 362.0,
+      "hit_rate_pct": 3.104897504074106,
+      "mean_targets": 2.0758212539668923,
+      "unique_items_top10": 18.0,
+      "unique_items_rank1": 6.0,
+      "recall_vs_popularity_pct": 0.0
+    },
+    {
+      "model": "Weighted Score (CF=0.3)",
+      "sumber_per_user": false,
+      "users": 11659,
+      "recall@10": 0.0128204728953575,
+      "ndcg@10": 0.0079302639176107,
+      "users_with_hit": NaN,
+      "hit_rate_pct": NaN,
+      "mean_targets": NaN,
+      "unique_items_top10": NaN,
+      "unique_items_rank1": NaN,
+      "recall_vs_popularity_pct": -5.023007371671351
+    },
+    {
+      "model": "TF-IDF CBF",
+      "sumber_per_user": true,
+      "users": 11659,
+      "recall@10": 0.012233976372245565,
+      "ndcg@10": 0.007492072285689685,
+      "users_with_hit": 248.0,
+      "hit_rate_pct": 2.127112102238614,
+      "mean_targets": 2.0758212539668923,
+      "unique_items_top10": 16838.0,
+      "unique_items_rank1": 5108.0,
+      "recall_vs_popularity_pct": -9.367907626662241
+    },
+    {
+      "model": "Item-CF",
+      "sumber_per_user": true,
+      "users": 11659,
+      "recall@10": 0.005885283512122501,
+      "ndcg@10": 0.0033509674983504428,
+      "users_with_hit": 128.0,
+      "hit_rate_pct": 1.097864310832833,
+      "mean_targets": 2.0758212539668923,
+      "unique_items_top10": 18121.0,
+      "unique_items_rank1": 5076.0,
+      "recall_vs_popularity_pct": -56.40047498178529
+    }
+  ],
+  "extremes": {
+    "terkuat_recall": "Popularity",
+    "terkuat_ndcg": "Popularity",
+    "terlemah_recall": "Item-CF",
+    "terlemah_ndcg": "Item-CF",
+    "rasio_terlemah_terkuat_recall": 0.43599525018214713
+  },
+  "user_overlap": [
+    {
+      "kombinasi_model_dengan_hit": "tidak ada hit",
+      "n_users": 10984
+    },
+    {
+      "kombinasi_model_dengan_hit": "Popularity",
+      "n_users": 333
+    },
+    {
+      "kombinasi_model_dengan_hit": "TF-IDF CBF",
+      "n_users": 207
+    },
+    {
+      "kombinasi_model_dengan_hit": "Item-CF",
+      "n_users": 73
+    },
+    {
+      "kombinasi_model_dengan_hit": "Item-CF + TF-IDF CBF",
+      "n_users": 33
+    },
+    {
+      "kombinasi_model_dengan_hit": "Item-CF + Popularity",
+      "n_users": 21
+    },
+    {
+      "kombinasi_model_dengan_hit": "Popularity + TF-IDF CBF",
+      "n_users": 7
+    },
+    {
+      "kombinasi_model_dengan_hit": "Item-CF + Popularity + TF-IDF CBF",
+      "n_users": 1
+    }
+  ],
+  "pairwise_wins": [
+    {
+      "model_a": "Item-CF",
+      "model_b": "Popularity",
+      "a_lebih_baik": 106,
+      "b_lebih_baik": 340,
+      "seri": 11213
+    },
+    {
+      "model_a": "Item-CF",
+      "model_b": "TF-IDF CBF",
+      "a_lebih_baik": 95,
+      "b_lebih_baik": 216,
+      "seri": 11348
+    },
+    {
+      "model_a": "Popularity",
+      "model_b": "TF-IDF CBF",
+      "a_lebih_baik": 354,
+      "b_lebih_baik": 241,
+      "seri": 11064
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "nilai_berbeda_item_cf",
+      "judul": "Nilai Item-CF berbeda antara artefak Task 2 dan Task 3",
+      "detail": "recall@10 = 0.0058853 di baseline_comparison.csv vs 0.0057995 di task3_model_comparison.csv (selisih 8.58e-05, 1.46% relatif); ndcg@10 = 0.0033510 di baseline_comparison.csv vs 0.0033230 di task3_model_comparison.csv (selisih 2.79e-05, 0.83% relatif). Kemungkinan cache rekomendasi dipakai ulang setelah kode berubah; hapus outputs/task3/cache lalu jalankan ulang sebelum angka dikutip.",
+      "dampak": "angka CF/CBF belum bisa dikutip sebagai satu nilai final"
+    },
+    {
+      "id": "nilai_berbeda_tf_idf_cbf",
+      "judul": "Nilai TF-IDF CBF berbeda antara artefak Task 2 dan Task 3",
+      "detail": "recall@10 = 0.0122340 di baseline_comparison.csv vs 0.0121482 di task3_model_comparison.csv (selisih 8.58e-05, 0.70% relatif); ndcg@10 = 0.0074921 di baseline_comparison.csv vs 0.0074909 di task3_model_comparison.csv (selisih 1.20e-06, 0.02% relatif). Kemungkinan cache rekomendasi dipakai ulang setelah kode berubah; hapus outputs/task3/cache lalu jalankan ulang sebelum angka dikutip.",
+      "dampak": "angka CF/CBF belum bisa dikutip sebagai satu nilai final"
+    },
+    {
+      "id": "tradeoff_rrf_recall_vs_ndcg",
+      "judul": "RRF unggul Recall@10 tetapi kalah NDCG@10 dari Popularity",
+      "detail": "Recall@10 0.014198 vs 0.013499 (+5.19%), NDCG@10 0.009086 vs 0.009222 (-1.47%). Fusi menemukan lebih banyak item relevan, tetapi menempatkannya lebih rendah.",
+      "dampak": "pemilihan model tidak bisa hanya memakai satu metrik"
+    },
+    {
+      "id": "weighted_score_di_bawah_popularity",
+      "judul": "Weighted Score terbaik masih di bawah Popularity",
+      "detail": "Weighted Score (CF=0.3): Recall@10 0.012820 vs 0.013499. Bobot 30% untuk Item-CF menarik kualitas ranking turun karena komponen CF adalah baseline terlemah.",
+      "dampak": "bobot optimal cenderung menekan komponen CF, bukan memanfaatkannya"
+    },
+    {
+      "id": "popularity_tanpa_personalisasi",
+      "judul": "Popularity hanya memakai belasan item untuk seluruh pengguna",
+      "detail": "Seluruh 11,659 pengguna hanya menerima 18 item unik di Top-10, dan hanya 6 item berbeda di peringkat 1. Item-CF menyentuh 18,121 item, TF-IDF CBF 16,838 item.",
+      "dampak": "keunggulan recall Popularity dicapai dengan portfolio hampir seragam"
+    },
+    {
+      "id": "mayoritas_user_target_tunggal",
+      "judul": "Mayoritas pengguna hanya punya satu item relevan",
+      "detail": "54.52% pengguna memiliki tepat satu target relevan, rata-rata 2.08 target per pengguna. Untuk kelompok ini Recall@10 bersifat biner dan NDCG@10 hanya ditentukan posisi satu item.",
+      "dampak": "perbedaan model kecil sulit dibedakan secara statistik"
+    }
+  ],
+  "insights": [
+    "Item-CF adalah baseline terlemah: Recall@10 0.005885, sekitar 56% di bawah Popularity, dan hanya 128 pengguna mendapat satu pun item relevan. Fallback popularitas di recommend_from_model membuat Top-10 Item-CF sebagian besar bukan hasil kemiripan item, jadi kontribusi CF murni perlu diukur terpisah.",
+    "Ketiga baseline hampir tidak beririsan: hanya 1 pengguna mendapat hit di ketiganya, sedangkan 333 pengguna hanya tertolong Popularity, 207 hanya TF-IDF CBF, dan 73 hanya Item-CF. Ini menjelaskan mengapa fusi berbasis ranking bisa menaikkan Recall di atas semua komponennya.",
+    "Prioritas perbaikan berikutnya adalah memperbaiki skor Item-CF (normalisasi jumlah tetangga, ambang co-occurrence minimum, dan memisahkan fallback popularitas sebagai varian tersendiri) sebelum menambah model baru seperti MF.",
+    "Popularity sebaiknya ikut dijadikan komponen fusi, bukan hanya pembanding: karena ia menang pada pengguna yang tidak tertolong CF/CBF, daftar ketiga berpeluang memperbaiki NDCG fusi yang saat ini justru lebih rendah dari Popularity.",
+    "Pelaporan perlu ditambah hit-rate@10 dan catalog coverage. Popularity hanya menyentuh 18 item unik, sementara 3.10% pengguna mendapat hit; angka recall saja menyembunyikan perbedaan cakupan ini.",
+    "Sebelum angka CF/CBF dikutip di laporan, hapus outputs/task3/cache lalu jalankan ulang Task_3_Evaluasi_Eksperimen_Hybrid_FAST supaya nilainya sama dengan baseline_comparison.csv."
+  ],
+  "uses_test_data": false
+}

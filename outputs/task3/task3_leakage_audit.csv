@@ -1,0 +1,10 @@
+check,status,evidence
+Official evaluable users digunakan,PASS,"11,659 users"
+Semua evaluable users ada di training,PASS,0 missing
+Validation user berada di evaluable universe,PASS,0 outside
+Seen-item exclusion pada target,PASS,0 overlap
+Semua model memakai user universe sama,PASS,"11,659 users/model"
+src model/fusion bebas dari validation/test read,PASS,static scan
+Notebook fit-call bebas dari validation/test args,PASS,9 fit calls
+Test file tersedia,NOT_AVAILABLE,tidak tersedia
+Matrix Factorization,INFO,NOT_AVAILABLE - belum ada implementasi MF pada repository saat ini
