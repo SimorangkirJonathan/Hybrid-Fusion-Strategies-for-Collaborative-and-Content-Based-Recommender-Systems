@@ -1,0 +1,28 @@
+{
+  "task": "CP4 Task 2 — Perbandingan Baseline",
+  "source_files": [
+    "outputs/w11/w11_all_configs.csv",
+    "outputs/w11/w11_metadata.json"
+  ],
+  "split": "validation",
+  "uses_final_test": false,
+  "k": 10,
+  "candidate_universe": 22753,
+  "evaluable_users": 11659,
+  "selected_configs": [
+    "E1-popularity",
+    "E2-itemcf-k100",
+    "E3-tfidf-cbf",
+    "E4-weighted-a030",
+    "E5-rrf-k100"
+  ],
+  "rrf_best": "E5-rrf-k100",
+  "rrf_vs_popularity": {
+    "delta_ndcg@10": -0.00013555050460390024,
+    "relative_ndcg_percent": -1.4698536520625596,
+    "delta_recall@10": 0.0006999676515208001,
+    "relative_recall_percent": 5.185520301878553
+  },
+  "hit_rate_and_coverage_complete": true,
+  "missing_aggregate_configs": []
+}
